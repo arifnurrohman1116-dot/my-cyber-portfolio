@@ -30,43 +30,18 @@
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom Style Animations -->
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-        }
-        .glass-nav {
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .dark .glass-nav {
-            background-color: rgba(15, 23, 42, 0.85);
-        }
-        .animate-float {
-            animation: float 4s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-        }
+        body { font-family: 'Inter', sans-serif; transition: background-color 0.3s, color 0.3s; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+        .glass-nav { background-color: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
+        .dark .glass-nav { background-color: rgba(15, 23, 42, 0.85); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen pt-20">
     <!-- Navbar -->
-    <nav class="glass-nav fixed top-0 left-0 right-0 z-50 border-b border-slate-200/50 dark:border-slate-800/50 transition-all">
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50 border-b border-slate-200/50 dark:border-slate-800/50">
         <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="#" class="font-bold text-xl tracking-tight bg-gradient-to-r gold text-transparent bg-clip-text">CyberPortfolio</a>
+            <a href="#" class="font-bold text-xl bg-gradient-to-r from-purple-600 to-indigo-500 text-transparent bg-clip-text">CyberPortfolio</a>
             <div class="flex items-center gap-4">
                 <button id="themeToggle" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:scale-105 transition-all text-slate-600 dark:text-slate-300">
                     <i class="fas fa-moon dark:hidden"></i>
@@ -78,15 +53,66 @@
 
     <!-- Hero Section -->
     <header class="max-w-5xl mx-auto px-4 py-16 text-center">
-        <div class="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-purple-500/30 shadow-lg animate-float">
+        <div class="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-purple-500/30 shadow-lg">
             <img src="https://i.postimg.cc/T3cDvXNx/Chat-GPT-Image-Jun-26-2026-10-04-31-AM.png" alt="Foto Profil Arif" class="w-full h-full object-cover">
         </div>
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-3 tracking-tight bg-gradient-to-r from-purple-600 to-indigo-500 dark:from-purple-400 dark:to-indigo-300 text-transparent bg-clip-text">ARIF NUR ROHMAN</h1>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-purple-600 to-indigo-500 dark:from-purple-400 dark:to-indigo-300 text-transparent bg-clip-text">ARIF NUR ROHMAN</h1>
         <p class="text-lg text-slate-600 dark:text-slate-400 max-w-xl mx-auto font-medium">Mahasiswa Pendidikan Matematika | Universitas Muhammadiyah Pringsewu</p>
     </header>
 
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 pb-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Left Column: Info & Skills -->
+        <div class="space-y-6">
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700/50">
+                <h3 class="font-bold text-lg mb-4 flex items-center gap-2"><i class="fas fa-user text-purple-500"></i> Tentang Saya</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Fokus pada integrasi matematika dengan teknologi cyber security, analisis data, dan kriptografi dasar.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700/50">
+                <h3 class="font-bold text-lg mb-4 flex items-center gap-2"><i class="fas fa-code text-purple-500"></i> Keahlian</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-xs rounded-lg">Kriptografi</span>
+                    <span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-xs rounded-lg">Analisis Data</span>
+                    <span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-xs rounded-lg">Python (Dasar)</span>
+                    <span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-xs rounded-lg">HTML/CSS</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Interactive IPK Calculator & Projects -->
+        <div class="md:col-span-2 space-y-6">
+            <!-- IPK Calculator -->
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700/50">
+                <h3 class="font-bold text-lg mb-2 flex items-center gap-2"><i class="fas fa-calculator text-purple-500"></i> Kalkulator IPK Interaktif</h3>
+                <p class="text-xs text-slate-500 mb-4">Simulasi perhitungan indeks prestasi Anda.</p>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="text-xs block mb-1 font-medium">Nilai Rata-rata</label>
+                        <input type="number" id="ipkInput" step="0.01" max="4" min="0" placeholder="Contoh: 3.75" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <div class="flex items-end">
+                        <button onclick="hitungPredikat()" class="w-full py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-xl shadow-sm transition-all">Cek Predikat</button>
+                    </div>
+                </div>
+                <div id="ipkResult" class="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-xl text-center text-sm font-semibold text-purple-600 dark:text-purple-400 hidden"></div>
+            </div>
+
+            <!-- Experience/Projects -->
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700/50">
+                <h3 class="font-bold text-lg mb-4 flex items-center gap-2"><i class="fas fa-graduation-cap text-purple-500"></i> Riwayat Akademik</h3>
+                <div class="border-l-2 border-purple-500 pl-4 space-y-4">
+                    <div>
+                        <span class="text-xs font-bold text-purple-500">2024 - Sekarang</span>
+                        <h4 class="font-semibold text-sm">Pendidikan Matematika</h4>
+                        <p class="text-xs text-slate-500">Universitas Muhammadiyah Pringsewu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <script>
-        // Theme Toggle logic
+        // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -95,12 +121,24 @@
         }
         themeToggle.addEventListener('click', () => {
             document.documentElement.classList.toggle('dark');
-            if (document.documentElement.classList.contains('dark')) {
-                localStorage.theme = 'dark';
-            } else {
-                localStorage.theme = 'light';
-            }
+            localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
         });
+
+        // IPK Calculator Logic
+        function hitungPredikat() {
+            const val = parseFloat(document.getElementById('ipkInput').value);
+            const res = document.getElementById('ipkResult');
+            if(isNaN(val) || val < 0 || val > 4) {
+                res.innerText = "Masukkan nilai IPK valid (0.00 - 4.00)";
+            } else if(val >= 3.51) {
+                res.innerText = `IPK: ${val.toFixed(2)} - Predikat: Dengan Pujian (Cum Laude) 🌟`;
+            } else if(val >= 3.00) {
+                res.innerText = `IPK: ${val.toFixed(2)} - Predikat: Sangat Memuaskan 👍`;
+            } else {
+                res.innerText = `IPK: ${val.toFixed(2)} - Predikat: Memuaskan`;
+            }
+            res.classList.remove('hidden');
+        }
     </script>
 </body>
 </html>
